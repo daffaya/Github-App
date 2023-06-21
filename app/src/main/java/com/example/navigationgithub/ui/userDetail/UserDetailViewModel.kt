@@ -1,14 +1,11 @@
-package com.example.navigationgithub
+package com.example.navigationgithub.ui.userDetail
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.navigationgithub.Api.ApiConfig
-import com.example.navigationgithub.Response.DetailUserResponse
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.Response.SearchUserResponse
-import com.example.navigationgithub.UserDetailActivity.Companion.username
+import com.example.navigationgithub.data.remote.ApiConfig
+import com.example.navigationgithub.data.response.DetailUserResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +20,6 @@ class UserDetailViewModel: ViewModel() {
 
     companion object{
         const val TAG = "UserDetailViewModel"
-        private const val USER_ID = "daffaya"
     }
 
 
@@ -39,13 +35,13 @@ class UserDetailViewModel: ViewModel() {
                 if (response.isSuccessful){
                     _detailUser.value = response.body()
                 } else {
-                    Log.e(UserDetailViewModel.TAG, "onFailure: ${response.message()}")
+                    Log.e(TAG, "onFailure: ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<DetailUserResponse>, t: Throwable) {
                 _isLoading.value = false
-                Log.e(UserDetailViewModel.TAG, "onFailure: ${t.message.toString()}")
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
             }
         })
     }

@@ -1,4 +1,4 @@
-package com.example.navigationgithub.Fragment
+package com.example.navigationgithub.ui.following
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.navigationgithub.Adapter.UserAdapter
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.UserDetailActivity
+import com.example.navigationgithub.data.response.SearchUser
+import com.example.navigationgithub.ui.userDetail.UserDetailActivity
 import com.example.navigationgithub.databinding.FragmentFollowingBinding
 
 class FollowingFragment : Fragment() {
@@ -20,7 +20,7 @@ class FollowingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         followingBinding = FragmentFollowingBinding.inflate(inflater, container, false)
         followingViewModel = ViewModelProvider(this).get(FollowingViewModel::class.java)

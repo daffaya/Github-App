@@ -1,4 +1,4 @@
-package com.example.navigationgithub.Api
+package com.example.navigationgithub.data.remote
 
 import androidx.viewbinding.BuildConfig
 import okhttp3.OkHttpClient

@@ -5,10 +5,10 @@ import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.*
-import com.example.navigationgithub.Api.ApiConfig
-import com.example.navigationgithub.Preference.SettingPreferences
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.Response.SearchUserResponse
+import com.example.navigationgithub.data.local.SettingPreferences
+import com.example.navigationgithub.data.remote.ApiConfig
+import com.example.navigationgithub.data.response.SearchUser
+import com.example.navigationgithub.data.response.SearchUserResponse
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +25,6 @@ class MainViewModel(application: Application, dataStore: DataStore<Preferences>)
 
     companion object {
         private const val TAG = "MainViewModel"
-        private const val USER_ID = "daffaya"
     }
 
     fun findUser(name: String) {

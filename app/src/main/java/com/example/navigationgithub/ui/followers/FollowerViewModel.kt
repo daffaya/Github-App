@@ -1,32 +1,27 @@
-package com.example.navigationgithub.Fragment
+package com.example.navigationgithub.ui.followers
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.navigationgithub.Api.ApiConfig
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.UserDetailViewModel
+import com.example.navigationgithub.data.response.SearchUser
+import com.example.navigationgithub.ui.userDetail.UserDetailViewModel
+import com.example.navigationgithub.data.remote.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FollowingViewModel: ViewModel() {
+class FollowerViewModel: ViewModel() {
 
-    private val _detailFollowing = MutableLiveData<List<SearchUser>>(listOf())
-    val detailFollowing: LiveData<List<SearchUser>> = _detailFollowing
+    private val _detailFollower = MutableLiveData<List<SearchUser>>(listOf())
+    val detailFollower: LiveData<List<SearchUser>> = _detailFollower
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    companion object{
-        private const val TAG = "FollowingViewModel"
-        private const val USER_ID = "daffaya"
-    }
-
-    fun findFollowing(following: String) {
+    fun findFollower(follower: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getFollowing(following)
+        val client = ApiConfig.getApiService().getFollower(follower)
         client.enqueue(object : Callback<List<SearchUser>> {
             override fun onResponse(
                 call: Call<List<SearchUser>>,
@@ -34,7 +29,7 @@ class FollowingViewModel: ViewModel() {
             ) {
                 _isLoading.value = false
                 if (response.isSuccessful){
-                    _detailFollowing.value = response.body()
+                    _detailFollower.value = response.body()
                 } else {
                     Log.e(UserDetailViewModel.TAG, "onFailure: ${response.message()}")
                 }

@@ -1,11 +1,10 @@
 package com.example.navigationgithub.Adapter
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.navigationgithub.Fragment.FollowersFragment
-import com.example.navigationgithub.Fragment.FollowingFragment
+import com.example.navigationgithub.ui.followers.FollowersFragment
+import com.example.navigationgithub.ui.following.FollowingFragment
 
 class SectionsPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
     override fun createFragment(position: Int): Fragment {

@@ -3,14 +3,11 @@ package com.example.navigationgithub.Adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.navigationgithub.Database.FavoriteUser
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.UserDetailActivity
 import com.example.navigationgithub.databinding.ProfileDetailBinding
-import de.hdodenhof.circleimageview.CircleImageView
+import com.example.navigationgithub.ui.userDetail.UserDetailActivity
 
 class DetailUserAdapter(private val listUser: List<FavoriteUser>) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {
@@ -40,13 +37,4 @@ class DetailUserAdapter(private val listUser: List<FavoriteUser>) :
 
     override fun getItemCount() = listUser.size
 
-    class ViewHolder(binding: ProfileDetailBinding) : RecyclerView.ViewHolder(binding.root) {
-        val name: TextView = binding.tvUsername
-//        val following: TextView = binding.tvFollowing
-//        val follower: TextView = binding.tvFollower
-
-        val image: CircleImageView = binding.imgProfilePhoto
-
-
-    }
 }

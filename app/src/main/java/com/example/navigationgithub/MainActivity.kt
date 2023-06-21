@@ -17,9 +17,11 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.navigationgithub.Adapter.UserAdapter
-import com.example.navigationgithub.Preference.SettingPreferences
-import com.example.navigationgithub.Response.SearchUser
+import com.example.navigationgithub.data.local.SettingPreferences
+import com.example.navigationgithub.data.response.SearchUser
 import com.example.navigationgithub.databinding.ActivityMainBinding
+import com.example.navigationgithub.factory.ViewModelFactory
+import com.example.navigationgithub.ui.favorite.FavoriteUserActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -112,12 +114,6 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
-    private fun toggleTheme() {
-        isDarkThemeEnabled = !isDarkThemeEnabled
-    }
-
 
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {

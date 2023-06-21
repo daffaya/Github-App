@@ -1,8 +1,8 @@
-package com.example.navigationgithub.Api
+package com.example.navigationgithub.data.remote
 
-import com.example.navigationgithub.Response.DetailUserResponse
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.Response.SearchUserResponse
+import com.example.navigationgithub.data.response.DetailUserResponse
+import com.example.navigationgithub.data.response.SearchUser
+import com.example.navigationgithub.data.response.SearchUserResponse
 import retrofit2.Call
 
 import retrofit2.http.*

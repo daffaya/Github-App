@@ -1,4 +1,4 @@
-package com.example.navigationgithub.Preference
+package com.example.navigationgithub.data.local
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences

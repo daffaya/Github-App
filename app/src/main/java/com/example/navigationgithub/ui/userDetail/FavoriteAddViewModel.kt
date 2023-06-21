@@ -1,11 +1,10 @@
-package com.example.navigationgithub.Insert
+package com.example.navigationgithub.ui.userDetail
 
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.navigationgithub.Database.FavoriteUser
-import com.example.navigationgithub.Repository.FavoriteRepository
-import com.example.navigationgithub.UserDetailActivity.Companion.username
+import com.example.navigationgithub.data.repository.FavoriteRepository
 
 class FavoriteAddViewModel(application: Application) : ViewModel() {
     private val mFavoriteRepository: FavoriteRepository = FavoriteRepository(application)

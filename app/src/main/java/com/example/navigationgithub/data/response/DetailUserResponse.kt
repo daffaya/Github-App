@@ -1,4 +1,4 @@
-package com.example.navigationgithub.Response
+package com.example.navigationgithub.data.response
 
 import com.google.gson.annotations.SerializedName
 

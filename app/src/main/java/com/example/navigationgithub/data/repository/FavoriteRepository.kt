@@ -1,12 +1,10 @@
-package com.example.navigationgithub.Repository
+package com.example.navigationgithub.data.repository
 
 import android.app.Application
-import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
 import com.example.navigationgithub.Database.FavoriteRoomDatabase
 import com.example.navigationgithub.Database.FavoriteUser
 import com.example.navigationgithub.Database.FavoriteUserDao
-import com.example.navigationgithub.UserDetailActivity.Companion.username
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 

@@ -1,12 +1,13 @@
-package com.example.navigationgithub
+package com.example.navigationgithub.factory
 
 import android.app.Application
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.navigationgithub.Insert.FavoriteAddViewModel
-import com.example.navigationgithub.Preference.SettingPreferences
+import com.example.navigationgithub.ui.favorite.FavoriteViewModel
+import com.example.navigationgithub.ui.userDetail.FavoriteAddViewModel
+import com.example.navigationgithub.MainViewModel
 
 class ViewModelFactory private constructor(
     private val mApplication: Application,

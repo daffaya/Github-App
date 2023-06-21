@@ -2,18 +2,14 @@ package com.example.navigationgithub.Adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.navigationgithub.R
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.UserDetailActivity
+import com.example.navigationgithub.data.response.SearchUser
+import com.example.navigationgithub.ui.userDetail.UserDetailActivity
 import com.example.navigationgithub.databinding.ProfileDetailBinding
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class UserAdapter(private val listUser: List<SearchUser>) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {

@@ -1,29 +1,24 @@
-package com.example.navigationgithub
+package com.example.navigationgithub.ui.userDetail
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.example.navigationgithub.Adapter.DetailUserAdapter
 import com.example.navigationgithub.Adapter.SectionsPagerAdapter
 import com.example.navigationgithub.Database.FavoriteUser
-import com.example.navigationgithub.Insert.FavoriteAddViewModel
-import com.example.navigationgithub.Response.DetailUserResponse
-import com.example.navigationgithub.Response.SearchUser
+import com.example.navigationgithub.R
+import com.example.navigationgithub.data.response.DetailUserResponse
 import com.example.navigationgithub.databinding.ActivityUserDetailBinding
+import com.example.navigationgithub.factory.ViewModelFactory
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import java.nio.file.Files.delete
 
 class UserDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserDetailBinding
@@ -125,8 +120,8 @@ class UserDetailActivity : AppCompatActivity() {
     }
 
     private fun isFavorited(fav: Boolean) {
-        val dataAvatarImg: String? = intent?.getStringExtra(UserDetailActivity.avatar)
-        val dataUsername: String? = intent?.getStringExtra(UserDetailActivity.username)
+        val dataAvatarImg: String? = intent?.getStringExtra(avatar)
+        val dataUsername: String? = intent?.getStringExtra(username)
 
 
         favorite.username = dataUsername ?: ""

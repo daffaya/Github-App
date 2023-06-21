@@ -1,34 +1,25 @@
-package com.example.navigationgithub.Fragment
+package com.example.navigationgithub.ui.followers
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.example.navigationgithub.Adapter.UserAdapter
-import com.example.navigationgithub.R
-import com.example.navigationgithub.Response.DetailUserResponse
-import com.example.navigationgithub.Response.SearchUser
-import com.example.navigationgithub.UserDetailActivity
-import com.example.navigationgithub.databinding.ActivityUserDetailBinding
+import com.example.navigationgithub.data.response.SearchUser
+import com.example.navigationgithub.ui.userDetail.UserDetailActivity
 import com.example.navigationgithub.databinding.FragmentFollowersBinding
 
 class FollowersFragment : Fragment() {
     private lateinit var followerBinding: FragmentFollowersBinding
     private lateinit var followerViewModel: FollowerViewModel
 
-    companion object{
-        const val follower: String = "Follower"
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         followerBinding = FragmentFollowersBinding.inflate(inflater, container, false)
         followerViewModel = ViewModelProvider(this).get(FollowerViewModel::class.java)
         // Inflate the layout for this fragment
