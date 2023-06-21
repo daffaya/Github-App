@@ -1,6 +1,6 @@
 # Project Readme
 
-## Features to be Added to the Application:
+## Features Inside the Application:
 
 ### Favorite User with Database
 **What's in this app?:**
