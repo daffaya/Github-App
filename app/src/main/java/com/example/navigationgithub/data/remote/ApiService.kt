@@ -8,26 +8,27 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
+    // TODO:  Add Github API Token inside the authorization like this (Authorization: token YOUR_GITHUB_API_TOKEN_HERE)
     @GET("search/users")
-    @Headers("Authorization: token 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") //
+    @Headers("Authorization: ") //
     fun getUser(
         @Query("q") username: String
     ): Call<SearchUserResponse>
 
     @GET("users/{username}")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: ")
     fun getDetailUser(
         @Path("username") username: String
     ):Call<DetailUserResponse>
 
     @GET("users/{username}/following")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: ")
     fun getFollowing(
         @Path("username") username: String
     ):Call<List<SearchUser>>
 
     @GET("users/{username}/followers")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: ")
     fun getFollower(
         @Path("username") username: String
     ):Call<List<SearchUser>>
