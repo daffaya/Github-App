@@ -13,4 +13,5 @@
     <string name="repository_count">13</string>
     <string name="theme">Theme</string>
     <string name="favorite">Favorite</string>
+    <string name="floating_action_button">Floating Action Button</string>
 </resources>
